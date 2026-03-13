@@ -1,0 +1,2 @@
+# This is a doxygen tag file, not an executable
+libgz-rendering-core-dev: executable-not-elf-or-script [usr/share/gz/gz-rendering/gz-rendering.tag.xml]

@@ -1,0 +1,4 @@
+# These fonts are bundled with the OGRE media files and are required
+# for the rendering engine. They are duplicates of system fonts but
+# need to be present in the OGRE media directory for the engine to work.
+libgz-rendering10-ogre1-dev: duplicate-font-file * [usr/share/gz/gz-rendering/ogre/media/fonts/*]

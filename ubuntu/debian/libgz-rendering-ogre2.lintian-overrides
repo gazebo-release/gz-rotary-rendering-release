@@ -1,0 +1,4 @@
+# This is a plugin library package. The unversioned .so symlink is intentionally
+# included in the runtime package (not -dev) because plugins need to dlopen the
+# library by name without version suffix.
+libgz-rendering-ogre2: link-to-shared-library-in-wrong-package * [usr/lib/*/libgz-rendering-ogre2.so]

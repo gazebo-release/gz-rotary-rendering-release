@@ -1,0 +1,3 @@
+usr/lib/*/lib*-rendering-ogre2.so*
+usr/lib/*/*-rendering-[0-99]*/engine-plugins/lib*-rendering*-ogre2*.so*
+usr/share/gz/gz-rendering/ogre2/media

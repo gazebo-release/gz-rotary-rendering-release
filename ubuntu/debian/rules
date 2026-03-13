@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+EXTRA_CMAKE_FLAGS =
+ifneq (,$(filter $(DEB_HOST_ARCH_CPU), arm64 arm))
+    EXTRA_CMAKE_FLAGS = -DGZ_ADD_fPIC_TO_LIBRARIES=True
+endif
+
+.PHONY: override_dh_auto_configure \
+        override_dh_install \
+        override_dh_auto_test \
+	override_dh_auto_build
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -DSKIP_optix=true \
+	    -DCMAKE_BUILD_TYPE=RelWithDebInfo $(EXTRA_CMAKE_FLAGS)
+
+# Execute doc creation to export at least the doxygen tag file
+override_dh_auto_build:
+	dh_auto_build -- doc
+	dh_auto_build
+
+override_dh_install:
+	install -d debian/tmp/usr/share/gz/gz-rendering/
+	install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-rendering/
+	dh_install --
+	# need to remove files present in components
+	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre.hh
+	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre2.hh
+
+override_dh_auto_test:
+	true
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l/usr/lib/$(DEB_HOST_MULTIARCH)/OGRE-2.3 -l/usr/lib/$(DEB_HOST_MULTIARCH)/OGRE-NEXT

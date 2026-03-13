@@ -1,0 +1,4 @@
+usr/include/*/rendering*/*/rendering/ogre2/*
+usr/include/*/rendering*/*/rendering/ogre2.hh
+usr/lib/*/pkgconfig/*-rendering-ogre2.pc
+usr/lib/*/cmake/*-rendering-ogre2/*

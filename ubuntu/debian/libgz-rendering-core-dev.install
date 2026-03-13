@@ -1,0 +1,9 @@
+usr/include/*/rendering*/*/rendering/*.hh
+usr/include/*/rendering*/*/rendering/base/*.hh
+usr/include/*/rendering*/*/rendering.hh
+usr/include/*/rendering*/gz/rendering/detail/*.hh
+usr/lib/*/lib*-rendering.so
+usr/lib/*/pkgconfig/*-rendering.pc
+usr/lib/*/cmake/*-rendering/*-rendering*
+usr/share/gz/*-rendering/*-rendering*.tag.xml
+usr/share/gz/*-rendering/media/*
