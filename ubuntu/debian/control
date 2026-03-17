@@ -183,7 +183,7 @@ Description: Gazebo Rendering classes and functions for robot apps - Metapackage
  .
  Metapackage for development files
 
-Package: gz-rotary-rendering
+Package: libgz-rotary-rendering-dev
 Depends: libgz-rendering-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -191,7 +191,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-rotary-rendering-core
+Package: libgz-rotary-rendering-core-dev
 Depends: libgz-rendering-core-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -199,7 +199,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-rotary-rendering-ogre1
+Package: libgz-rotary-rendering-ogre1-dev
 Depends: libgz-rendering-ogre1-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -207,7 +207,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-rotary-rendering-ogre2
+Package: libgz-rotary-rendering-ogre2-dev
 Depends: libgz-rendering-ogre2-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
