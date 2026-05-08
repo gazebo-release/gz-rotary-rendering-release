@@ -10,7 +10,6 @@ Build-Depends: cmake,
                libgl1-mesa-dev,
                libglu1-mesa-dev,
                libglew-dev,
-               libfreeimage-dev,
                libgz-cmake-dev,
                libgz-common-events-dev,
                libgz-common-geospatial-dev,
@@ -47,7 +46,6 @@ Description: Gazebo Rendering classes and functions for robot apps - Shared libr
 
 # Only for the examples:
 #
-#        libfreeimage-dev,
 #        freeglut3-dev,
 #        libglew-dev,
 
