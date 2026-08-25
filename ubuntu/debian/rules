@@ -28,7 +28,6 @@ override_dh_install:
 	install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-rendering/
 	dh_install --
 	# need to remove files present in components
-	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre.hh
 	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre2.hh
 
 override_dh_auto_test:
