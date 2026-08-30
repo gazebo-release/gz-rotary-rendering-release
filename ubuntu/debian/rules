@@ -16,6 +16,7 @@ endif
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
+      -DSKIP_OGRE=ON \
 	    -DCMAKE_BUILD_TYPE=RelWithDebInfo $(EXTRA_CMAKE_FLAGS)
 
 # Execute doc creation to export at least the doxygen tag file
