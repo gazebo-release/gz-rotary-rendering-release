@@ -19,6 +19,7 @@ Build-Depends: cmake,
                libgz-math-eigen3-dev,
                libgz-plugin-dev,
                libgz-utils-dev,
+               libogre-1.9-dev,
                libogre-next-2.3-dev,
                libvulkan-dev
 Vcs-Browser: https://github.com/gazebosim/gz-rendering
@@ -71,6 +72,48 @@ Description: Gazebo Rendering classes and functions - Core development files
   .
   Core development files
 
+Package: libgz-rendering-ogre1-dev
+Architecture: any
+Section: libdevel
+Depends: libgz-cmake-dev,
+         libgz-common-events-dev,
+         libgz-common-geospatial-dev,
+         libgz-common-graphics-dev,
+         libgz-math-dev,
+         libgz-math-eigen3-dev,
+         libogre-1.9-dev,
+         libgz-plugin-dev,
+         libgz-rendering-core-dev (= ${binary:Version}),
+         libgz-rendering-ogre1 (= ${binary:Version}),
+         ${misc:Depends}
+Provides: libgz-rendering-ogre1-dev-generic
+Conflicts: libgz-rendering-ogre1-dev-generic, libgz-rendering6-ogre1-dev, libgz-rendering8-ogre1-dev, libgz-rendering9-ogre1-dev, libgz-rendering10-ogre1-dev
+Replaces: libgz-rendering6-ogre1-dev, libgz-rendering8-ogre1-dev, libgz-rendering9-ogre1-dev, libgz-rendering10-ogre1-dev
+Multi-Arch: same
+Description: Gazebo Rendering classes and functions for robot apps - Ogre1 dev files
+ Gazebo Rendering is a C++ library designed to provide an abstraction for
+ different rendering engines. It offers unified APIs for creating 3D graphics
+ applications.  Gazebo Rendering is a component in the Gazebo framework, a
+ set of libraries designed to rapidly develop robot applications.
+ .
+ Ogre1 component development files
+
+Package: libgz-rendering-ogre1
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: libgz-rendering-ogre1-generic
+Conflicts: libgz-rendering-ogre1-generic, libgz-rendering6-ogre1, libgz-rendering8-ogre1, libgz-rendering9-ogre1, libgz-rendering10-ogre1
+Replaces: libgz-rendering6-ogre1, libgz-rendering8-ogre1, libgz-rendering9-ogre1, libgz-rendering10-ogre1
+Multi-Arch: same
+Description: Gazebo Rendering classes and functions for robot apps - Ogre1 lib
+ Gazebo Rendering is a C++ library designed to provide an abstraction for
+ different rendering engines. It offers unified APIs for creating 3D graphics
+ applications.  Gazebo Rendering is a component in the Gazebo framework, a
+ set of libraries designed to rapidly develop robot applications.
+ .
+ Ogre1 component shared library
+
 Package: libgz-rendering-ogre2-dev
 Architecture: any
 Section: libdevel
@@ -122,6 +165,7 @@ Package: libgz-rendering-dev
 Architecture: any
 Section: libdevel
 Depends: libgz-rendering-core-dev (= ${binary:Version}),
+         libgz-rendering-ogre1-dev (= ${binary:Version}),
          libgz-rendering-ogre2-dev (= ${binary:Version}),
          libgz-rendering (= ${binary:Version}),
          ${misc:Depends}
@@ -149,6 +193,14 @@ Description: alias package
 
 Package: libgz-rotary-rendering-core-dev
 Depends: libgz-rendering-core-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-rendering-ogre1-dev
+Depends: libgz-rendering-ogre1-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: metapackages

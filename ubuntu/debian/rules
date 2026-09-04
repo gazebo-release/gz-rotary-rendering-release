@@ -16,7 +16,7 @@ endif
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-      -DSKIP_ogre=ON \
+	    -DSKIP_optix=true \
 	    -DCMAKE_BUILD_TYPE=RelWithDebInfo $(EXTRA_CMAKE_FLAGS)
 
 # Execute doc creation to export at least the doxygen tag file
@@ -29,6 +29,7 @@ override_dh_install:
 	install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-rendering/
 	dh_install --
 	# need to remove files present in components
+	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre.hh
 	$(RM) debian/libgz-rendering*-core-dev/usr/include/gz/rendering*/gz/rendering/ogre2.hh
 
 override_dh_auto_test:
